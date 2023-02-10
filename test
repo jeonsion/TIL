@@ -1,0 +1,30 @@
+Yolov5 설치 후 성능평가지표를 알아보기위해 작업하던 중 다음과 같은 에러를 발생했다.
+
+## Error
+![](https://velog.velcdn.com/images/jeon328kr/post/8ce544fe-7b03-4019-a49a-ed1417bd0b8d/image.png)
+일명 : yolov5 이 작업을 완료하기 위한 페이징 파일이 너무 작습니다
+
+## Envirment
+Windows 10
+Python 3.9.16(virtual env anaconda)
+CUDA 11.2
+torch 1.8.0
+GPU NVIDIA GeForce GTX 1060 6GB
+
+
+## Solution
+1. pip install pefile
+2. fixNvpe.py 파일 다운로드하기
+https://gist.github.com/cobryan05/7d1fe28dd370e110a372c4d268dcb2e5
+
+```
+git clone https://gist.github.com/7d1fe28dd370e110a372c4d268dcb2e5.git
+```
+3. 생성된 폴더 진입
+4. 명령어 실행
+```
+python fixNvPe.py C:\Users\ubicomp\Anaconda3\envs\py39\lib\site-packages\torch\lib\*.dll
+
+```
+5. 실행결과
+![](https://velog.velcdn.com/images/jeon328kr/post/aac94f76-4709-407a-9e59-2cfd77dbc5df/image.png)
